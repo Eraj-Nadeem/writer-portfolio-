@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Syeda Eraj Nadeem — Content Writer & Email Copywriter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --ink: #1a1814;
+    --ink2: #4a4640;
+    --ink3: #8a857e;
+    --paper: #f7f4ef;
+    --paper2: #edeae3;
+    --paper3: #e2ddd5;
+    --accent: #c84b2f;
+    --accent2: #e8a87c;
+    --gold: #b8860b;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 3rem;
+    background: rgba(247,244,239,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--paper3);
+    transition: all 0.3s;
+  }
+  .nav-logo { font-family: var(--serif); font-size: 1.15rem; color: var(--ink); text-decoration: none; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--ink2); text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-cta {
+    font-size: 0.82rem; font-weight: 500; padding: 0.5rem 1.2rem;
+    background: var(--ink); color: var(--paper);
+    border-radius: 2px; text-decoration: none;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--accent); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 5rem;
+    overflow: hidden;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 4rem 3rem 4rem 5rem;
+  }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 1.5rem;
+  }
+  .hero-tag::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 5vw, 5rem);
+    line-height: 1.05;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+  h1 em { color: var(--accent); font-style: italic; }
+  .hero-sub {
+    font-size: 1.1rem; color: var(--ink2); line-height: 1.7;
+    max-width: 480px; margin-bottom: 2.5rem;
+  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-block; padding: 0.85rem 2rem;
+    background: var(--accent); color: #fff;
+    font-size: 0.9rem; font-weight: 500; text-decoration: none;
+    border-radius: 2px; letter-spacing: 0.03em;
+    transition: all 0.2s; box-shadow: 0 4px 20px rgba(200,75,47,0.3);
+  }
+  .btn-primary:hover { background: #a83820; transform: translateY(-1px); }
+  .btn-ghost {
+    display: inline-block; padding: 0.85rem 2rem;
+    border: 1.5px solid var(--ink);
+    color: var(--ink); font-size: 0.9rem; font-weight: 500;
+    text-decoration: none; border-radius: 2px; letter-spacing: 0.03em;
+    transition: all 0.2s;
+  }
+  .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+  .hero-right {
+    background: var(--ink);
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 4rem 3rem;
+    position: relative; overflow: hidden;
+  }
+  .hero-right::before {
+    content: '';
+    position: absolute; top: -80px; right: -80px;
+    width: 360px; height: 360px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200,75,47,0.15) 0%, transparent 70%);
+  }
+  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08); }
+  .stat-cell {
+    background: var(--ink);
+    padding: 2rem 1.5rem;
+    position: relative;
+  }
+  .stat-num {
+    font-family: var(--serif); font-size: 2.8rem; color: var(--accent2);
+    line-height: 1; margin-bottom: 0.4rem; display: block;
+  }
+  .stat-desc { font-size: 0.82rem; color: rgba(255,255,255,0.55); line-height: 1.4; }
+  .stat-brand { font-size: 0.72rem; color: rgba(255,255,255,0.3); margin-top: 0.3rem; font-style: italic; }
+  .hero-availability {
+    margin-top: 2rem;
+    display: flex; align-items: center; gap: 0.75rem;
+    font-size: 0.82rem; color: rgba(255,255,255,0.5);
+  }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: #4caf50; animation: pulse 2s infinite; flex-shrink: 0; }
+  @keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(76,175,80,0.4)} 50%{box-shadow:0 0 0 6px rgba(76,175,80,0)} }
+
+  /* SECTION BASE */
+  section { padding: 6rem 5rem; }
+  .section-label {
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;
+  }
+  .section-label::after { content: ''; flex: 1; max-width: 40px; height: 1px; background: var(--accent); }
+  h2 { font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 3rem); color: var(--ink); line-height: 1.15; margin-bottom: 1rem; }
+  h2 em { color: var(--accent); font-style: italic; }
+
+  /* WRITING SAMPLES */
+  .samples-section { background: var(--paper2); }
+  .samples-intro { max-width: 560px; color: var(--ink2); margin-bottom: 3rem; font-size: 1.05rem; }
+  .samples-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .sample-card {
+    background: var(--paper); border: 1px solid var(--paper3);
+    padding: 1.8rem; border-radius: 4px;
+    transition: all 0.25s;
+    text-decoration: none; color: inherit; display: block;
+    position: relative; overflow: hidden;
+  }
+  .sample-card::after {
+    content: '↗'; position: absolute; top: 1.2rem; right: 1.2rem;
+    font-size: 1.1rem; color: var(--accent); opacity: 0; transition: opacity 0.2s;
+  }
+  .sample-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
+  .sample-card:hover::after { opacity: 1; }
+  .sample-tag {
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 0.75rem; display: block;
+  }
+  .sample-title { font-family: var(--serif); font-size: 1.15rem; line-height: 1.3; margin-bottom: 0.6rem; color: var(--ink); }
+  .sample-desc { font-size: 0.88rem; color: var(--ink3); line-height: 1.6; }
+  .sample-placeholder {
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 0.5rem;
+    min-height: 120px;
+    border: 1.5px dashed var(--paper3);
+    border-radius: 4px; color: var(--ink3); font-size: 0.85rem;
+    background: none;
+  }
+
+  /* SERVICES */
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 3rem; background: var(--paper3); border: 1px solid var(--paper3); }
+  .service-cell {
+    background: var(--paper);
+    padding: 2.5rem 2rem;
+  }
+  .service-num { font-family: var(--serif); font-size: 3rem; color: var(--paper3); line-height: 1; margin-bottom: 1rem; }
+  .service-name { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.75rem; color: var(--ink); }
+  .service-desc { font-size: 0.88rem; color: var(--ink2); line-height: 1.7; margin-bottom: 1.2rem; }
+  .service-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { font-size: 0.72rem; padding: 3px 10px; background: var(--paper2); color: var(--ink2); border-radius: 20px; font-weight: 500; }
+
+  /* CASE STUDIES */
+  .cases-section { background: var(--ink); color: var(--paper); }
+  .cases-section .section-label { color: var(--accent2); }
+  .cases-section .section-label::after { background: var(--accent2); }
+  .cases-section h2 { color: var(--paper); }
+  .cases-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .case-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 2rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  .case-card:hover { background: rgba(255,255,255,0.07); }
+  .case-industry { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent2); margin-bottom: 0.5rem; font-weight: 500; }
+  .case-client { font-family: var(--serif); font-size: 1.4rem; color: var(--paper); margin-bottom: 1rem; }
+  .case-metrics { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+  .case-metric { }
+  .case-metric-num { font-family: var(--serif); font-size: 1.6rem; color: var(--accent2); display: block; line-height: 1; }
+  .case-metric-label { font-size: 0.75rem; color: rgba(255,255,255,0.4); }
+  .case-desc { font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.7; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1rem; }
+
+  /* EXPERIENCE */
+  .exp-timeline { margin-top: 3rem; }
+  .exp-item { display: grid; grid-template-columns: 200px 1fr; gap: 3rem; padding: 2.5rem 0; border-bottom: 1px solid var(--paper3); }
+  .exp-item:first-child { border-top: 1px solid var(--paper3); }
+  .exp-meta { }
+  .exp-date { font-size: 0.82rem; color: var(--ink3); margin-bottom: 0.4rem; }
+  .exp-company { font-size: 0.9rem; font-weight: 500; color: var(--accent); }
+  .exp-right { }
+  .exp-title { font-family: var(--serif); font-size: 1.3rem; margin-bottom: 1rem; }
+  .exp-bullets { list-style: none; }
+  .exp-bullets li {
+    font-size: 0.92rem; color: var(--ink2); padding: 0.35rem 0 0.35rem 1.2rem;
+    position: relative; line-height: 1.6;
+  }
+  .exp-bullets li::before { content: '–'; position: absolute; left: 0; color: var(--accent); }
+
+  /* TOOLS */
+  .tools-section { background: var(--paper2); }
+  .tools-clusters { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 3rem; }
+  .tool-cluster-name { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink3); margin-bottom: 0.75rem; }
+  .tool-list { display: flex; flex-direction: column; gap: 0.4rem; }
+  .tool-item { font-size: 0.9rem; color: var(--ink); padding: 0.3rem 0; border-bottom: 1px solid var(--paper3); }
+
+  /* CONTACT */
+  .contact-section { background: var(--accent); color: #fff; }
+  .contact-inner { max-width: 700px; }
+  .contact-section h2 { color: #fff; margin-bottom: 1rem; }
+  .contact-sub { font-size: 1.1rem; color: rgba(255,255,255,0.75); margin-bottom: 2.5rem; line-height: 1.7; }
+  .contact-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  .contact-link {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.85rem 1.8rem; border: 1.5px solid rgba(255,255,255,0.5);
+    color: #fff; text-decoration: none; font-weight: 500; font-size: 0.9rem;
+    border-radius: 2px; transition: all 0.2s;
+  }
+  .contact-link:hover { background: rgba(255,255,255,0.15); border-color: #fff; }
+  .contact-link.solid { background: #fff; color: var(--accent); border-color: #fff; }
+  .contact-link.solid:hover { background: rgba(255,255,255,0.9); }
+  .contact-meta { margin-top: 3rem; font-size: 0.85rem; color: rgba(255,255,255,0.55); }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink); color: rgba(255,255,255,0.35);
+    padding: 2rem 5rem; font-size: 0.82rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+
+  /* ANIMATIONS */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 4rem 1.5rem 3rem; }
+    .hero-right { padding: 3rem 1.5rem; }
+    section { padding: 4rem 1.5rem; }
+    .samples-grid, .services-grid, .cases-grid, .tools-clusters { grid-template-columns: 1fr; }
+    .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Syeda Eraj Nadeem</a>
+  <ul class="nav-links">
+    <li><a href="#samples">Work</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#experience">Experience</a></li>
+  </ul>
+  <a href="mailto:syedaerajn@gmail.com" class="nav-cta">Work With Me</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding:0">
+  <div class="hero-left">
+    <span class="hero-tag">Content Strategist · Copywriter · 7 Years</span>
+    <h1>Words that <em>rank,</em> convert &amp; grow.</h1>
+    <p class="hero-sub">I build content that does real work — SEO articles that climb rankings, email sequences that move subscribers, and social content that grows audiences. Across 15+ client accounts, simultaneously.</p>
+    <div class="hero-actions">
+      <a href="#samples" class="btn-primary">See My Writing</a>
+      <a href="#results" class="btn-ghost">View Results</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stats-grid">
+      <div class="stat-cell">
+        <span class="stat-num">+434%</span>
+        <div class="stat-desc">Total social reach growth</div>
+        <div class="stat-brand">EMME Lash Bar</div>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">+60%</span>
+        <div class="stat-desc">Organic traffic lift</div>
+        <div class="stat-brand">Multi-niche SEO</div>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">+30%</span>
+        <div class="stat-desc">Email engagement lift</div>
+        <div class="stat-brand">8+ client brands</div>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">15+</span>
+        <div class="stat-desc">Active client accounts managed</div>
+        <div class="stat-brand">Simultaneously</div>
+      </div>
+    </div>
+    <div class="hero-availability">
+      <span class="dot"></span>
+      Available for full-time remote roles &amp; long-term contracts · PKT (UTC+5)
+    </div>
+  </div>
+</section>
+
+<!-- WRITING SAMPLES -->
+<section id="samples" class="samples-section reveal">
+  <div class="section-label">Writing Samples</div>
+  <h2>The actual <em>work.</em></h2>
+  <p class="samples-intro">Below are selected pieces across content writing, email copy, and social media. Click any card to read the full piece.</p>
+  <div class="samples-grid">
+    <a href="#" class="sample-card">
+      <span class="sample-tag">SEO Content · Finance</span>
+      <div class="sample-title">How to Build a Passive Income Portfolio in 2024</div>
+      <div class="sample-desc">Long-form, EEAT-optimised article built around topical authority cluster for Playbook Investment Group. 2,400 words.</div>
+    </a>
+    <a href="#" class="sample-card">
+      <span class="sample-tag">Email Copy · E-commerce</span>
+      <div class="sample-title">Welcome Sequence — GlowBuddy Skincare</div>
+      <div class="sample-desc">5-email Klaviyo drip sequence. A/B tested subject lines. Drove 28% open rate uplift in first 30 days.</div>
+    </a>
+    <a href="#" class="sample-card">
+      <span class="sample-tag">Social Media · Beauty</span>
+      <div class="sample-title">Reels Script Series — EMME Lash Bar</div>
+      <div class="sample-desc">POV comedy scripts + before/after hooks that grew Instagram from 33.9K to 122.7K in 6 weeks. +261% reach.</div>
+    </a>
+    <a href="#" class="sample-card">
+      <span class="sample-tag">Landing Page · SaaS</span>
+      <div class="sample-title">HypnoBiz-in-a-Box — Homepage Copy</div>
+      <div class="sample-desc">Conversion-focused homepage rewrite. Repositioned value prop for B2B hypnotherapy platform. Full funnel alignment.</div>
+    </a>
+    <a href="#" class="sample-card">
+      <span class="sample-tag">Email Copy · Insurance</span>
+      <div class="sample-title">Nurture Sequence — MonRoe Life Insurance</div>
+      <div class="sample-desc">Authority-building email series introducing webinar-led content strategy. +100% link clicks within 60 days.</div>
+    </a>
+    <div class="sample-placeholder sample-card">
+      <span style="font-size:1.5rem;color:var(--paper3)">+</span>
+      <span>More samples on request</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="reveal">
+  <div class="section-label">What I Do</div>
+  <h2>Three disciplines. <em>One voice.</em></h2>
+  <div class="services-grid">
+    <div class="service-cell">
+      <div class="service-num">01</div>
+      <div class="service-name">SEO Content Writing</div>
+      <div class="service-desc">Research-backed long-form articles built on topical authority, silo structure, and EEAT signals. Every piece maps to keyword intent and a funnel stage.</div>
+      <div class="service-tags">
+        <span class="tag">EEAT</span><span class="tag">Semantic SEO</span><span class="tag">Topical mapping</span>
+        <span class="tag">Silo structure</span><span class="tag">Internal linking</span>
+      </div>
+    </div>
+    <div class="service-cell">
+      <div class="service-num">02</div>
+      <div class="service-name">Email Marketing Copy</div>
+      <div class="service-desc">High-converting drip campaigns, lead nurture sequences, and newsletters in Klaviyo and Mailchimp. A/B tested from subject line to CTA.</div>
+      <div class="service-tags">
+        <span class="tag">Klaviyo</span><span class="tag">Mailchimp</span><span class="tag">Drip campaigns</span>
+        <span class="tag">A/B testing</span><span class="tag">Segmentation</span>
+      </div>
+    </div>
+    <div class="service-cell">
+      <div class="service-num">03</div>
+      <div class="service-name">Social Media &amp; Strategy</div>
+      <div class="service-desc">Platform-native captions, Reels scripts, and content calendars across Instagram, LinkedIn, TikTok, and Facebook. Built for algorithm performance and real connection.</div>
+      <div class="service-tags">
+        <span class="tag">Reels scripts</span><span class="tag">Captions</span><span class="tag">Content calendar</span>
+        <span class="tag">Brand voice</span><span class="tag">ToFU–BoFU</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="results" class="cases-section reveal">
+  <div class="section-label">Client Results</div>
+  <h2>Numbers that <em>speak.</em></h2>
+  <div class="cases-grid">
+    <div class="case-card">
+      <div class="case-industry">Beauty &amp; Skincare</div>
+      <div class="case-client">EMME Lash Bar</div>
+      <div class="case-metrics">
+        <div class="case-metric">
+          <span class="case-metric-num">+434%</span>
+          <span class="case-metric-label">Total views</span>
+        </div>
+        <div class="case-metric">
+          <span class="case-metric-num">+1,150%</span>
+          <span class="case-metric-label">Facebook reach</span>
+        </div>
+        <div class="case-metric">
+          <span class="case-metric-num">+261%</span>
+          <span class="case-metric-label">Instagram reach</span>
+        </div>
+      </div>
+      <div class="case-desc">Structured content calendar, POV comedy Reels, and before/after lash content grew Instagram from 33.9K to 122.7K in 6 weeks. 866 link clicks from zero.</div>
+    </div>
+    <div class="case-card">
+      <div class="case-industry">SaaS &amp; Health Tech</div>
+      <div class="case-client">HypnoBiz-in-a-Box</div>
+      <div class="case-metrics">
+        <div class="case-metric">
+          <span class="case-metric-num">52.7K</span>
+          <span class="case-metric-label">Q1 impressions</span>
+        </div>
+        <div class="case-metric">
+          <span class="case-metric-num">+92.3%</span>
+          <span class="case-metric-label">Follower growth (March)</span>
+        </div>
+        <div class="case-metric">
+          <span class="case-metric-num">204</span>
+          <span class="case-metric-label">Posts published Q1</span>
+        </div>
+      </div>
+      <div class="case-desc">Managed 7 platforms across Facebook, Instagram, LinkedIn, TikTok, Pinterest, YouTube, and GBP. 695 total engagements across Q1 with zero ad spend.</div>
+    </div>
+    <div class="case-card">
+      <div class="case-industry">Finance &amp; Trading</div>
+      <div class="case-client">Playbook Investment Group</div>
+      <div class="case-metrics">
+        <div class="case-metric">
+          <span class="case-metric-num">14.5K</span>
+          <span class="case-metric-label">Organic views</span>
+        </div>
+        <div class="case-metric">
+          <span class="case-metric-num">+337%</span>
+          <span class="case-metric-label">Instagram link clicks</span>
+        </div>
+        <div class="case-metric">
+          <span class="case-metric-num">$0</span>
+          <span class="case-metric-label">Ad spend</span>
+        </div>
+      </div>
+      <div class="case-desc">Daily Reels strategy, stock ticker breakdowns, and timely market-reaction content. 552 content interactions, 65 new organic followers — all organic.</div>
+    </div>
+    <div class="case-card">
+      <div class="case-industry">SEO &amp; Content Writing</div>
+      <div class="case-client">Multi-Niche SEO Content</div>
+      <div class="case-metrics">
+        <div class="case-metric">
+          <span class="case-metric-num">+60%</span>
+          <span class="case-metric-label">Organic traffic</span>
+        </div>
+        <div class="case-metric">
+          <span class="case-metric-num">+30%</span>
+          <span class="case-metric-label">Lead generation</span>
+        </div>
+        <div class="case-metric">
+          <span class="case-metric-num">+30%</span>
+          <span class="case-metric-label">Email engagement</span>
+        </div>
+      </div>
+      <div class="case-desc">Long-form keyword-intent articles, semantic content clusters, silo structures, and EEAT-aligned copy across finance, health, real estate, and tech verticals.</div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="reveal">
+  <div class="section-label">Experience</div>
+  <h2>7 years of words <em>that work.</em></h2>
+  <div class="exp-timeline">
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-date">Jan 2026 – Present</div>
+        <div class="exp-company">Carpe Diem Team</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-title">Content Strategist &amp; Strategy Manager</div>
+        <ul class="exp-bullets">
+          <li>Oversee content writing, email copy, and social media strategy for 15+ simultaneous client accounts across finance, tech, skincare, health, and real estate</li>
+          <li>Build topical authority maps and silo structures grounded in EEAT and semantic SEO, lifting organic rankings and domain authority</li>
+          <li>Managed social media across 7 platforms — Facebook, Instagram, LinkedIn, TikTok, Pinterest, YouTube, and GBP — achieving +434% total views for a skincare brand</li>
+          <li>Built social brand presences from zero for finance, skincare, and health clients; 14,521 organic views with zero ad spend</li>
+          <li>Directed a 12-member content team, cutting turnaround 40% while sustaining 90%+ client retention</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-date">Nov 2024 – May 2025</div>
+        <div class="exp-company">Carpe Diem Team</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-title">SEO Content Writer &amp; Email Copywriter</div>
+        <ul class="exp-bullets">
+          <li>Drove 60% organic traffic growth through long-form SEO articles optimised for keyword intent, semantic relevance, and EEAT signals</li>
+          <li>Grew inbound lead generation 30% via conversion-focused landing page copy and BoFU call-to-action sequences</li>
+          <li>Raised email open rates and CTR 30% through A/B tested subject lines and segmented Klaviyo/Mailchimp nurture sequences across 8+ brands</li>
+          <li>Produced brand voice guidelines and content style docs for 5+ clients ensuring consistency across web, email, and social</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-date">2018 – 2024</div>
+        <div class="exp-company">Freelance</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-title">Freelance Content Writer &amp; Copywriter</div>
+        <ul class="exp-bullets">
+          <li>Delivered SEO content, blog writing, email copy, and social media management for clients across e-commerce, health, and B2B SaaS</li>
+          <li>Built long-term relationships with recurring clients, developing brand voice guidelines and editorial systems from the ground up</li>
+          <li>Specialised in researching and writing on topics including personal finance, wellness, real estate, and technology</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="tools-section reveal">
+  <div class="section-label">Tools &amp; Stack</div>
+  <h2>In-demand tools. <em>Real results.</em></h2>
+  <div class="tools-clusters">
+    <div>
+      <div class="tool-cluster-name">Email Marketing</div>
+      <div class="tool-list">
+        <div class="tool-item">Klaviyo</div>
+        <div class="tool-item">Mailchimp</div>
+        <div class="tool-item">GoHighLevel</div>
+        <div class="tool-item">Apollo</div>
+      </div>
+    </div>
+    <div>
+      <div class="tool-cluster-name">SEO &amp; Content</div>
+      <div class="tool-list">
+        <div class="tool-item">Ahrefs</div>
+        <div class="tool-item">Surfer SEO</div>
+        <div class="tool-item">SEMrush</div>
+        <div class="tool-item">Frase.io</div>
+        <div class="tool-item">Clearscope</div>
+      </div>
+    </div>
+    <div>
+      <div class="tool-cluster-name">Analytics &amp; Social</div>
+      <div class="tool-list">
+        <div class="tool-item">Google Analytics 4</div>
+        <div class="tool-item">Search Console</div>
+        <div class="tool-item">Meta Business Suite</div>
+        <div class="tool-item">Buffer / Hootsuite</div>
+        <div class="tool-item">Later</div>
+      </div>
+    </div>
+    <div>
+      <div class="tool-cluster-name">Workflow &amp; Creation</div>
+      <div class="tool-list">
+        <div class="tool-item">Notion</div>
+        <div class="tool-item">ClickUp</div>
+        <div class="tool-item">WordPress</div>
+        <div class="tool-item">Canva</div>
+        <div class="tool-item">ChatGPT / Jasper AI</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section reveal">
+  <div class="contact-inner">
+    <div class="section-label" style="color:rgba(255,255,255,0.6)">Let's Work Together</div>
+    <h2>Ready to create content that <em>actually converts?</em></h2>
+    <p class="contact-sub">Open to full-time remote roles and long-term freelance contracts worldwide. Based in Karachi, Pakistan — UTC+5, flexible hours for US/UK/EU clients.</p>
+    <div class="contact-links">
+      <a href="mailto:syedaerajn@gmail.com" class="contact-link solid">Email Me</a>
+      <a href="https://linkedin.com/in/eraj-nadeem" class="contact-link" target="_blank">LinkedIn ↗</a>
+      <a href="tel:+923193373350" class="contact-link">+92 319 337 3350</a>
+    </div>
+    <div class="contact-meta">syedaerajn@gmail.com · Karachi, Pakistan · Open to remote roles worldwide</div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Syeda Eraj Nadeem</span>
+  <span>Content Writer · Email Copywriter · Content Strategist</span>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => observer.observe(r));
+</script>
+</body>
+</html>
